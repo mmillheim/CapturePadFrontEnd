@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# GAProject3
+# CapturePad
+By Matt Millheim
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Link to App
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Introduction and Description
+CapturePad is an app where users can jot down events, tasks, and notes that they want to capture. It’s part journal and part todo app. My goal is to allow users to store these items with context and relationships to other items in a way that is searchable and, ultimately, useful for capturing thoughts, the events in their lives, and the important tasks that they want to do, and recalling them later.
 
-### `npm start`
+I am building this app using Django for the backend and React for the frontend.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### How to Use the App
+This app is still a prototype. New Notebooks can be added and edited, but the app is still a work in progress.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Design
+The app is designed with the intention to allow users to rapidly log events, tasks, and notes as they happen or come to mind. The app supports multiple notebooks so items can be stored in different contexts (e.g. "Work" and "Personal").
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Data Structure:
+##### User Model
+- Username
+- First Name
+- Last Name
+- Email
+- Password
+- Notebooks: [Notebook]
+- Tags:[Tags]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### Notebook Model
+- Title
+- Active
+- Owner: User
+- Days: [Day]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Day Model
+- Name
+- DayOfWeek
+- Notebook: Notebook
+- Notes:[Note]
 
-### `npm run eject`
+##### Note Model
+- TextContent
+- Complete
+- Images [Image]
+- Location
+- People: [Person]
+- DueDate
+- Type: Type
+- ChildNotes: [Note]
+- Tags: [Tag]
+- Context: Context
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### Tag Model
+- Name
+- Active
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Person Model
+- Name
+- e-mail
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+#### MVP:
+- full CRUD on notebooks, days, and notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Stretch Goals:
+- Add support for drawings
+- Add user authorization
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Technologies Used
+I used the following technologies to build this app...
+- ***React*** for the user interface
+- ***Django*** for the backend
+- ***Postgres*** for the database
 
-### Analyzing the Bundle Size
+### Wireframes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![image of Figma wireframe](CapturePadWireframe.png)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Unsolved Problems and Next Steps
+At this point the app does not have the ability to add, edit and delete notes. User Authorization also proved to be a challenge. I plan on continuing my work on this app of the coming months.

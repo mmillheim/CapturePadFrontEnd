@@ -5,9 +5,124 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#nav-bar {
+  background: lightgray;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  
+}
+
+#notebook-navbar {
+  top: 40px;
+  position: fixed;
+  background: white;
+  height: 40px;
+  width: 100vw;
+  box-shadow:  0px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#notebook-navbar div{
+  margin: 0 10px;
+}
+
+#view-list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#view-list div{
+  width: 50px;
+  height: 30px;
+  margin: 0 2px;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dayview-btn {
+  border-radius: 15px 0 0 15px;
+}
+#weekview-btn {
+  border-radius: 0 15px 15px 0;
+}
+
+
+main {
+  margin-top: 100px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0.5em;
+}
+
+nav li{
+  text-decoration: none;
+  width: 30vw;
+  text-align: center;
+}
+
+nav li a{
+  text-decoration: none;
+  color: black;
+}
+
+#home-link {
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+#login-link {
+  padding-right: 1em;
+  text-align: right;
+}
+div.notebook-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notebook-bar a{
+  padding: 0em 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form div{
+  margin: 10px;
+}
+
+canvas {
+  border: black 2px solid;
+
 }
